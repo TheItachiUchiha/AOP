@@ -1,5 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://java.sun.com/jsf/html">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Dashboard | BlueWhale Admin</title>
@@ -10,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/nav.css" media="screen" />
 
 <script type="text/javascript">
-
+	//<![CDATA[
 			function BuildFormFields($amount)
 			{
 				var
@@ -18,7 +21,7 @@
 					$item, $field, $i;
 
 				$container.innerHTML = '';
-				for ($i = 0; $i <$amount; $i++) {
+				for ($i = 0; $i < $amount; $i++) {
 					$item = document.createElement('div');
 					$item.style.margin = '3px';
 
@@ -94,11 +97,14 @@
 			}
 		}
 	}  
-
+	//]]>
 		</script>
         </head>
-
+<body>
 Number Of Achievers <input id="noOfAch" type="text" onkeyup="BuildFormFields(parseInt(this.value, 10));" />
 
 			<div id="FormFields" style="margin: 20px 0px;"></div>
-<button class="btn btn-blue" onclick="saveAchievers()">Save</button>
+			<h:commandButton styleClass="btn btn-blue" value="Save" action="#" onclick="saveAchievers()"></h:commandButton>
+
+</body>
+</html>

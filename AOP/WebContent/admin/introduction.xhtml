@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"    
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Dashboard | BlueWhale Admin</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/text.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/grid.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/layout.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/nav.css" media="screen" />
+
+<script type="text/javascript">  
+function saveIntro()  
+{  
+    var value=document.getElementById("introduction").value;
+  
+    if(value==="")  
+    {  
+       alert("Please Enter Some Data");
+    } 
+	else
+	{
+		alert("Data Saved");
+		} 
+}  
+</script> 
+</head>
+
+<body>
+<f:view>
+    <h:form id="intro">
+
+		<h:inputTextarea row="10" col="80" id="introduction" value = "#{introduction.intro}"/>
+		<!-- <textarea id="Introduction" cols="80" rows="10" ></textarea> --><br/><br/>
+
+		<h:commandButton styleClass="btn btn-blue" value="Save" action="#{introduction.saveIntro}" type="submit"></h:commandButton>
+		<!-- <button  class="btn btn-blue" onclick='saveIntro()'>Save</button> -->
+	</h:form>
+</f:view>
+</body>
+</html>
