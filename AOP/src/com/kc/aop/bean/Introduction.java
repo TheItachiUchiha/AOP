@@ -32,8 +32,13 @@ public class Introduction
 		this.intro = intro;
 	}
 
+public void readIntroduction()
+{
+	this.intro = dashboardService.readIntroduction();
+}
 
-
+	
+	
 	public String saveIntro() throws SQLException
 	{
 		return dashboardService.saveIntro(this.intro);

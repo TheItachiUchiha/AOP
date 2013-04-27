@@ -14,8 +14,26 @@ public class DashboardService
 		dashboardDAO = new DashboardDAO();
 	}
 	
-	public String saveIntro(String data) throws SQLException
+	public String readIntroduction() 
 	{
-		return dashboardDAO.saveIntro(data);
+		String data=null; 
+		try {
+			data=dashboardDAO.readIntroduction();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return data;
+	}
+	
+	public String saveIntro(String data)
+	{
+		try {
+			return dashboardDAO.saveIntro(data);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "failure";
 	}
 }
