@@ -1,19 +1,22 @@
 package com.kc.aop.bean;
 
+import java.sql.SQLException;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import com.kc.aop.dao.IntroductionService;
+import com.kc.aop.service.DashboardService;
+
 
 
 @ManagedBean
 @SessionScoped
-public class Introduction
+public class Dashboard
 {
-	IntroductionService introductionService;
-	public Introduction()
+	DashboardService dashboardService;
+	public Dashboard()
 	{
-		introductionService = new IntroductionService();
+		dashboardService = new DashboardService();
 	}
 	private String intro;
 
@@ -31,8 +34,8 @@ public class Introduction
 
 
 
-	public String saveIntro()
+	public String saveIntro() throws SQLException
 	{
-		return introductionService.saveIntro(this.intro);
+		return dashboardService.saveIntro(this.intro);
 	}
 }

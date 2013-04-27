@@ -37,7 +37,7 @@ function saveIntro()
 		<h:inputTextarea row="10" col="80" id="introduction" value = "#{introduction.intro}"/>
 		<!-- <textarea id="Introduction" cols="80" rows="10" ></textarea> --><br/><br/>
 
-		<h:commandButton styleClass="btn btn-blue" value="Save" action="#{introduction.saveIntro}" type="submit"></h:commandButton>
+		<h:commandButton styleClass="btn btn-blue" value="Save" action="#{introduction.saveIntro()}" type="submit"></h:commandButton>
 		<!-- <button  class="btn btn-blue" onclick='saveIntro()'>Save</button> -->
 	</h:form>
 </f:view>
