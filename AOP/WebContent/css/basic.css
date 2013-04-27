@@ -11,12 +11,13 @@
 #basic-modal-contentlog {display:none;}
 #basic-modal-contentContactUs {display:none;}
 #basic-modal-contentFeedback {display:none;}
-
+#basic-modal-contentMainNews {display:none;}
 /* Overlay */
 #simplemodal-overlay {background-color:#000;}
 
 /* Container */
 #simplemodal-container {height:200px; width:400px; color:#bbb; background-color:#333; border:1px solid #00467f; padding:12px;}
+
 #simplemodal-container .simplemodal-data {padding:8px;}
 #simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
 #simplemodal-container a {color:#ddd;}

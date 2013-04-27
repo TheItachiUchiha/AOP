@@ -35,6 +35,7 @@ div#banner{
 
 div#PageContent{
 	height:580px;
+	
 	background-image:url(../images/body.png);
 	
 	
@@ -223,6 +224,21 @@ a.aMenu:hover,a.aMenu:active
 	background:#66ff66;
 }
 
+
+a.aBotmenu:link,a.aMenu:visited
+{
+	
+text-decoration:none;
+
+}
+a.aBotmenu:hover,a.aMenu:active
+{
+	
+	
+	text-decoration:underline;
+	color:   #666;
+}
+
 #test1{
 	
 	height:auto;
@@ -237,21 +253,18 @@ a.aMenu:hover,a.aMenu:active
 }
 
 #pagConMain1 {
-	/*background-color:#CCC;*/
-	width: 650px;
-	height:230px;
-	z-index:2;	
-	position:relative;
-	top:104px;
-	
-	
-	background-color: #F00;
-/*	border-top-left-radius: 10px;
-	border-bottom-right-radius: 10px;*/
-	
+
 	
 	
 }
+#PageContent h3 {
+	
+	color: #06C;
+	font-size:18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size-adjust:inherit;
+	
+	}
 #pagConMain2 {
 	/*background-color:#CCC;*/
 	width: 650px;
@@ -288,10 +301,10 @@ a.aMenu:hover,a.aMenu:active
 #pagConMainRightBottom {
 	/*background-color:#CCC;*/
 	width: 370px;
-	height:288px;
-	z-index:2;	
+	height:200px;
+	z-index:1000;	
 	position:relative;
-	top:-363px;
+	top:-250px;
 	left:652px;
 	
 	background-color: #F00;
