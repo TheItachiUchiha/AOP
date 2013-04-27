@@ -225,19 +225,11 @@ a.aMenu:hover,a.aMenu:active
 }
 
 
-a.aBotmenu:link,a.aMenu:visited
-{
-	
-text-decoration:none;
 
-}
-a.aBotmenu:hover,a.aMenu:active
-{
-	
-	
-	text-decoration:underline;
-	color:   #666;
-}
+
+
+
+
 
 #test1{
 	
@@ -259,10 +251,10 @@ a.aBotmenu:hover,a.aMenu:active
 }
 #PageContent h3 {
 	
-	color: #06C;
-	font-size:18px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size-adjust:inherit;
+	color: #06C ;
+	font-size:20px;
+	font-family: "Myriad Pro", Arial;
+	
 	
 	}
 #pagConMain2 {
@@ -315,3 +307,40 @@ a.aBotmenu:hover,a.aMenu:active
 	
 }
 
+a.botMenu:link,a.botMenu:visited
+{
+	
+text-decoration:none;
+color:#666;
+
+}
+a.botMenu:hover,a.botMenu:active
+{
+	
+	
+	text-decoration:underline;
+	color:#CCC;
+	}
+	
+#footerMain h3 {
+	
+color: #06C;
+	font-size:20px;
+	font-family: "Myriad Pro", Arial;
+	
+	}
+	
+a.button-blue {
+color: #ffffff;
+text-shadow:0 1px black;
+position:relative;
+background-color: #000;
+padding: 5px 15px;
+border: 0;
+
+
+
+}
+a.button-blue:hover {
+
+}
