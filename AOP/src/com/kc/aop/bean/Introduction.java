@@ -11,10 +11,10 @@ import com.kc.aop.service.DashboardService;
 
 @ManagedBean
 @SessionScoped
-public class Dashboard
+public class Introduction
 {
 	DashboardService dashboardService;
-	public Dashboard()
+	public Introduction()
 	{
 		dashboardService = new DashboardService();
 	}
