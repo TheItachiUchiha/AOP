@@ -12,12 +12,25 @@
    <value/>
   </managed-property>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>login</managed-bean-name>
+  <managed-bean-class>com.kc.aop.bean.Login</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
  <navigation-rule>
   <from-view-id>/admin/introduction.xhtml</from-view-id>
   <navigation-case>
    <from-action>#{introduction.saveIntro}</from-action>
    <from-outcome>introduction</from-outcome>
    <to-view-id>/admin/introduction.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/index.xhtml</from-view-id>
+  <navigation-case>
+   <from-action>#{login.checkValidUser()}</from-action>
+   <from-outcome>success</from-outcome>
+   <to-view-id>/dashboard.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
 </faces-config>

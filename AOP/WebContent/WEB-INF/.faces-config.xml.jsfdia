@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#admin#introduction.xhtml"
+  PATH="/admin/introduction.xhtml" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#admin#introduction.xhtml:0" NAME="item"
+   PATH="/admin/introduction.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="introduction:#{introduction.saveIntro}:#admin#introduction.xhtml"
+    NAME="output" PATH="/admin/introduction.xhtml"
+    TARGET="rules:#admin#introduction.xhtml"
+    TITLE="#{introduction.saveIntro}:introduction" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
+  SHAPE="180,134,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
+   PATH="/index.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{login.checkValidUser()}:#dashboard.xhtml"
+    NAME="output" PATH="/dashboard.xhtml"
+    TARGET="rules:#dashboard.xhtml"
+    TITLE="#{login.checkValidUser()}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#dashboard.xhtml" PATH="/dashboard.xhtml"
+  SHAPE="413,150,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>
