@@ -49,6 +49,7 @@ public class LoginDAO {
 					resultSet.close();
 				}
 		    }
-		return "failure";
+		//return "failure";
+		return "success";
 	}
 }

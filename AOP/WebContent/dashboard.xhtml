@@ -1,5 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Dashboard | BlueWhale Admin</title>
@@ -48,6 +50,8 @@
     </script>
 </head>
 <body>
+<f:view>
+<h:form>
     <div class="container_12">
         <div class="grid_12 header-repeat">
             <div id="branding">
@@ -60,7 +64,7 @@
                         <ul class="inline-ul floatleft">
                             <li>Hello Admin</li>
                             <li><a href="#">Config</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><h:commandLink action="#{login.logout()}">Logout</h:commandLink></li>
                         </ul>
                         <br />
                         <span class="small grey">Last Login: 3 hours ago</span>
@@ -124,6 +128,8 @@
         <div class="clear">
         </div>
     </div>
+    </h:form>
+    </f:view>
     <div class="clear">
     </div>
     <div id="site_info">

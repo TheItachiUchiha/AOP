@@ -1,8 +1,15 @@
 package com.kc.aop.bean;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
 import com.kc.aop.VO.LoginVO;
 import com.kc.aop.service.LoginService;
 
+@ManagedBean(name="user")
+@SessionScoped
 public class Login 
 {
 	String username;
@@ -28,14 +35,26 @@ public class Login
 		this.password = password;
 	}
 	
+	
 	public String checkValidUser()
 	{
-		return "success";
-		/*LoginVO loginVO = new LoginVO();
+		LoginVO loginVO = new LoginVO();
 		loginVO.setUsername(this.username);
 		loginVO.setPassword(this.password);
-		return loginService.checkValidUser(loginVO);*/
+		
+		if (!loginService.checkValidUser(loginVO).equalsIgnoreCase("success")) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Unknown login, try again"));
+            return (username = password = null);
+        } else {
+            return "dashboard?faces-redirect=true";
+        }
+		
 	}
+	
+	public String logout() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "index?faces-redirect=true";
+    }
 	
 	
 }
