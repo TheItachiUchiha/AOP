@@ -12,16 +12,8 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
-  SHAPE="180,134,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#index.xhtml:0" NAME="item"
-   PATH="/index.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT
-    ID="success:#{login.checkValidUser()}:#dashboard.xhtml"
-    NAME="output" PATH="/dashboard.xhtml"
-    TARGET="rules:#dashboard.xhtml"
-    TITLE="#{login.checkValidUser()}:success" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#dashboard.xhtml" PATH="/dashboard.xhtml"
-  SHAPE="413,150,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+  SHAPE="180,134,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#admin#dashboard.xhtml"
+  PATH="/admin/dashboard.xhtml" SHAPE="206,306,0,0"
+  model-entity="JSFProcessGroup" persistent="true"/>
 </PROCESS>

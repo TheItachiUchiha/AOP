@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"    
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jstl/core">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Dashboard | BlueWhale Admin</title>
@@ -12,72 +14,25 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../css/nav.css" media="screen" />
 
-<script type="text/javascript">
-//<![CDATA[
-			function BuildFormFields($amount)
-			{
-				var
-					$container = document.getElementById('FormFields'),
-					$item, $field, $i;
-
-				$container.innerHTML = '';
-				for ($i = 0; $i < $amount; $i++) {
-					$item = document.createElement('div');
-					$item.style.margin = '3px';
-
-					$field = document.createElement('span');
-					$field.innerHTML = '<hr>'+'News '+ ($i+1) + 			"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-					$field.style.marginRight = '10px';
-					$item.appendChild($field);
-
-					$field = document.createElement('input');
-					$field.name = 'Design[' + $i + ']';
-					$field.id = 'Design[' + $i + ']';
-					$field.type = 'text';
-					$field.className = 'error';
-					$field.style.width = '500px';
-					$item.appendChild($field);
-
-
-					$container.appendChild($item);
-				}
-			}
-
-		function saveNews()  
-		{  
-			var value=document.getElementById("noOfNews").value;
-	  
-			if(value==="")  
-			{  
-			   alert("Please Enter Some Data");
-			} 
-			else
-			{
-				var $no = parseInt(value),$i;
-				for($i=0;$i < $no; $i++ )
-				{
-					var value1=document.getElementById( 'Design[' + $i + ']' ).value;
-					
-				
-					if(value1==="")
-					{
-					alert("Please enter Data");
-					break;
-					}
-				}
-				if($no===$i)
-				{
-					alert("Data Saved !!!");
-				}
-		}
-	}  
-		//]]>
-		</script>
         </head>
 <body>
-Number Of News Item To be Displayed <input id="noOfNews" type="text" onkeyup="BuildFormFields(parseInt(this.value, 10));" />
+<h:form>
+    <p>
+        <h:inputText value="#{news.noOfFields}" />
+        <h:commandButton value="Create fields">
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+    </p>
 
-			<div id="FormFields" style="margin: 20px 0px;"></div>
-<button class="btn btn-blue" onclick="saveNews()">Save</button>
+    <hr />
+
+    <p>
+        <c:forEach items="#{news.values}" varStatus="counter">
+            Field no. #{counter.index} <h:inputText value="#{news.values[counter.index]}" /><br />
+        </c:forEach>
+
+        <h:commandButton action="#{news.submit}" value="Save" />
+    </p>
+</h:form>
 </body>
 </html>
