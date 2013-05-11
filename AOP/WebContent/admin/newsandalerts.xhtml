@@ -4,8 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"    
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://java.sun.com/jstl/core">
-<head>
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Dashboard | BlueWhale Admin</title>
     <link rel="stylesheet" type="text/css" href="../css/reset.css" media="screen" />
@@ -14,25 +15,25 @@
     <link rel="stylesheet" type="text/css" href="../css/layout.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../css/nav.css" media="screen" />
 
-        </head>
+</h:head>
 <body>
 <h:form>
-    <p>
-        <h:inputText value="#{news.noOfFields}" />
-        <h:commandButton value="Create fields">
-            <f:ajax execute="@form" render="@form" />
-        </h:commandButton>
-    </p>
+  
+<p>Number Of News <h:inputText value="#{newsAlerts.noOfFields}" /></p>
 
-    <hr />
+		<hr/>
+        <h:dataTable id="newsinputs" value="#{newsAlerts.values}" var="item" cellspacing="10">
+        <h:column>
+        	 <h:outputLabel value="#{item.label}" /> &nbsp;&nbsp;&nbsp;
+       	</h:column>
+       	<h:column>
+       		 <h:inputText value="#{item.news}" /><br/>
+       	</h:column>
+    	</h:dataTable>
 
-    <p>
-        <c:forEach items="#{news.values}" varStatus="counter">
-            Field no. #{counter.index} <h:inputText value="#{news.values[counter.index]}" /><br />
-        </c:forEach>
-
-        <h:commandButton action="#{news.submit}" value="Save" />
-    </p>
+		<hr/>
+        <h:commandButton styleClass="btn btn-blue" action="#{newsAlerts.submit}" value="Save" />
+  
 </h:form>
 </body>
 </html>

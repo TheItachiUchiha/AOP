@@ -18,9 +18,9 @@
   <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  <managed-bean>
-  <managed-bean-name>news</managed-bean-name>
+  <managed-bean-name>newsAlerts</managed-bean-name>
   <managed-bean-class>com.kc.aop.bean.News</managed-bean-class>
-  <managed-bean-scope>session</managed-bean-scope>
+  <managed-bean-scope>view</managed-bean-scope>
   <managed-property>
    <property-name>noOfFields</property-name>
    <property-class>java.lang.String</property-class>
@@ -28,7 +28,7 @@
   </managed-property>
   <managed-property>
    <property-name>values</property-name>
-   <property-class>java.lang.String</property-class>
+   <property-class>java.util.List</property-class>
    <value/>
   </managed-property>
  </managed-bean>
