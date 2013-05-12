@@ -19,7 +19,7 @@
 <body>
 <h:form>
   
-<p>Number Of News <h:inputText value="#{newsAlerts.noOfFields}" /></p>
+<p>Number Of News <h:inputText value="#{newsAlerts.noOfFields}" onkeypress="if((event.which &lt; 48 || event.which &gt; 57) &amp;&amp; event.which != 8 ) return false;" /></p>
 
 		<hr/>
         <h:dataTable id="newsinputs" value="#{newsAlerts.values}" var="item" cellspacing="10">
@@ -27,7 +27,7 @@
         	 <h:outputLabel value="#{item.label}" /> &nbsp;&nbsp;&nbsp;
        	</h:column>
        	<h:column>
-       		 <h:inputText value="#{item.news}" /><br/>
+       		 <h:inputText value="#{item.news}" size="100" /><br/>
        	</h:column>
     	</h:dataTable>
 
